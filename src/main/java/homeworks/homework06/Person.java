@@ -2,11 +2,12 @@ package homeworks.homework06;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 class Person {
     private String name;
     private double money;
-    private ArrayList<Product> shoppingCart = new ArrayList<>();
+    private List<Product> shoppingCart = new ArrayList<>();
 
 
     public Person(){}
@@ -41,7 +42,7 @@ class Person {
         }
     }
 
-    public ArrayList<Product> getShoppingCart() {
+    public List<Product> getShoppingCart() {
         return shoppingCart;
     }
 
