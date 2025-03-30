@@ -1,3 +1,4 @@
+import cars.Car;
 import lombok.Getter;
 import lombok.Setter;
 

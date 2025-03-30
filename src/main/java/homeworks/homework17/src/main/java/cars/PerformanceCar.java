@@ -1,3 +1,5 @@
+package cars;
+
 import java.util.Arrays;
 
 public class PerformanceCar extends Car {
@@ -24,7 +26,7 @@ public class PerformanceCar extends Car {
 
     @Override
     public String toString() {
-        return "PerformanceCar{" +
+        return "cars.PerformanceCar{" +
                 "model='" + getModel() + '\'' +
                 ", mark='" + getMark() + '\'' +
                 ", year=" + getYear() +

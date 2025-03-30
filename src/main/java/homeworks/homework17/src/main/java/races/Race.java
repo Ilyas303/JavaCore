@@ -1,3 +1,6 @@
+package races;
+
+import cars.Car;
 import lombok.*;
 import java.util.List;
 
@@ -13,19 +16,19 @@ public class Race {
     private int prizeFund;
     private List<Car> participants;
 
-    static class CasualRace extends Race {
+   public static class CasualRace extends Race {
         public CasualRace(int length, String route, int prizeFund, List<Car> participants) {
             super(length, route, prizeFund, participants);
         }
     }
 
-    static class DragRace extends Race {
+   public static class DragRace extends Race {
         public DragRace(int length, String route, int prizeFund, List<Car> participants) {
             super(length, route, prizeFund, participants);
         }
     }
 
-    static class DriftRace extends Race {
+    public static class DriftRace extends Race {
         public DriftRace(int length, String route, int prizeFund, List<Car> participants) {
             super(length, route, prizeFund, participants);
         }

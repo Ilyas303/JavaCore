@@ -1,3 +1,7 @@
+package repository;
+
+import cars.Car;
+
 import java.util.List;
 
 public interface CarRepository {
