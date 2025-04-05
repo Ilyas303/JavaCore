@@ -16,7 +16,7 @@ public class UsersService {
 
     public Users getUser(Long id) {
         return usersRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Пользователь не найден")); // Обработка отсутствия пользователя
+                .orElseThrow(() -> new RuntimeException("Пользователь не найден"));
     }
 
     public List<Users> getUsers() {

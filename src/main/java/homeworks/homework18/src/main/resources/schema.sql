@@ -1,12 +1,15 @@
-CREATE TABLE if not exists users (
-    'id' BIGSERIAL PRIMARY KEY,
-    'fio' VARCHAR
+
+CREATE TABLE IF NOT EXISTS users (
+                                     id BIGINT PRIMARY KEY,
+                                     fio VARCHAR
 );
 
-CREATE TABLE if not exists orders (
-    'id' BIGSERIAL PRIMARY KEY,
-    'user_id' numeric foreign key,
-    'order_date' date,
-    'count_of_orders' numeric,
-    'user_discount' numeric
+CREATE TABLE IF NOT EXISTS orders (
+                                      id BIGINT PRIMARY KEY,
+                                      user_id BIGINT NOT NULL,
+                                      data_order DATE,
+                                      number_orders BIGINT,
+                                      buyer_discount BIGINT,
+                                      CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );
+

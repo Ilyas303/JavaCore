@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 
 @SpringBootApplication
 @RequiredArgsConstructor
@@ -23,10 +24,12 @@ public class Main {
     @PostConstruct
     public void init() {
         try {
-            Users user = usersService.getUser(1L);
+            Users user = usersService.getUser(15l);
             log.info("Пользователь: {}", user);
         } catch (Exception e) {
             log.error("Ошибка при получении пользователя: {}", e.getMessage());
         }
     }
+
+
 }
