@@ -1,12 +1,14 @@
-CREATE TABLE if not exists users (
-    'id' BIGSERIAL PRIMARY KEY,
-    'fio' VARCHAR
-);
+insert into public.users(id, fio) values (57,'рам вал рио');
+insert into public.users(id, fio) values (1,'рпам вал риноо');
+insert into public.users(id, fio) values (54,'репам варнал рио');
 
-CREATE TABLE if not exists orders (
-    'id' BIGSERIAL PRIMARY KEY,
-    'user_id' numeric foreign key,
-    'order_date' date,
-    'count_of_orders' numeric,
-    'user_discount' numeric
-);
+
+
+insert into public.users(id, fio) values (57,'рам вал рио');
+insert into public.users(id, fio) values (1,'рпам вал риноо');
+insert into public.users(id, fio) values (54,'репам варнал рио');
+
+
+insert into orders(id, user_id, data_order, number_orders, buyer_discount) DEFAULT VALUES
+
+
