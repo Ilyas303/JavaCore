@@ -1,0 +1,1 @@
+INSERT INTO users (id, fio) VALUES (2,"раф поля петров")
