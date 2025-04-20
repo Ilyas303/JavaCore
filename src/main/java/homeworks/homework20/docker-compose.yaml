@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=javacore'
+      - 'POSTGRES_PASSWORD=12345'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432'
+
+
