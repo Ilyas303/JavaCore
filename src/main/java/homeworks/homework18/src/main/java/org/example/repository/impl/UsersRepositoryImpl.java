@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +20,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
     @Override
     public Optional<Users> findById(Long id) {
-        String sql = "SELECT * FROM users u WHERE u.id = ?";
+        String sql = "SELECT * FROM users1 u WHERE u.id = ?";
         try {
             Users user = jdbcTemplate.queryForObject(sql, new Object[]{id}, rowMapper());
             return Optional.ofNullable(user);
@@ -32,7 +31,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
     @Override
     public List<Users> findAll() {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM users1";
         return jdbcTemplate.query(sql, rowMapper());
     }
 
