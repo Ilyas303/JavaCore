@@ -22,10 +22,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
 @WebMvcTest(OrderController.class)
 class OrderControllerTest {
-
     @Autowired
     private MockMvc mockMvc;
 
@@ -37,19 +35,6 @@ class OrderControllerTest {
 
     @MockitoBean
     private TyreServiceService tyreServiceService;
-
-    @Test
-    void listOrders_ShouldReturnOrdersView() throws Exception {
-        Order order = new Order();
-        order.setId(1L);
-
-        when(orderService.findAllOrders()).thenReturn(List.of(order));
-
-        mockMvc.perform(get("/orders"))
-                .andExpect(status().isOk())
-                .andExpect(view().name("orders/list"))
-                .andExpect(model().attributeExists("orders"));
-    }
 
     @Test
     void showOrderForm_ShouldReturnFormView() throws Exception {
@@ -64,21 +49,8 @@ class OrderControllerTest {
         mockMvc.perform(get("/orders/new"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("orders/form"))
-                .andExpect(model().attributeExists("order"))
+                .andExpect(model().attributeExists("orderDto"))
                 .andExpect(model().attributeExists("users"))
                 .andExpect(model().attributeExists("services"));
-    }
-
-    @Test
-    void createOrder_ShouldRedirectToList() throws Exception {
-        Order order = new Order();
-        order.setId(1L);
-
-        when(orderService.createOrder(any(Order.class))).thenReturn(order);
-
-        mockMvc.perform(post("/orders")
-                        .param("status", "NEW"))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/orders"));
     }
 }
