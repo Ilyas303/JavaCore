@@ -11,8 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "orders")
-@SQLDelete(sql = "UPDATE orders SET deleted = true WHERE id=?")
-@Where(clause = "deleted=false")
+
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
